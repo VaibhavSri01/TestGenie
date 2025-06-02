@@ -15,15 +15,17 @@
     </style>
 </head>
 <body>
-    <h1>Quiz Result</h1>
+   <h1>Quiz Result</h1>
     <div class="result">
         <p>Your Score: {{ score }} out of {{ total }}</p>
+
         <h2>Your Answers:</h2>
         <ul>
             {% for answer in user_answers %}
                 <li>{{ answer }}</li>
             {% endfor %}
         </ul>
+
         <h2>Correct Answers:</h2>
         <ul>
             {% for answer in correct_answers %}
