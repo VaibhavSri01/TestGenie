@@ -23,15 +23,17 @@
 </head>
 <body>
     <h1>MCQ Quiz</h1>
-    <div id="timer">Time left: <span id="time">{{ timer }}</span> seconds</div>
+    <div id="timer">Time left: <span id="time">{{ timer * 60 }}</span> seconds</div>
+
     <form id="quizForm" method="POST" action="/submit">
         {% for question in questions %}
+            {% set q_index = loop.index0 %}
             <div class="question">
-                <p>{{ question['question'] }}</p>
+                <p><strong>Q{{ loop.index }}:</strong> {{ question['question'] }}</p>
                 <div class="options">
                     {% for option in question['options'] %}
                         <label>
-                            <input type="radio" name="q{{ loop.index0 }}" value="{{ option }}" required>
+                            <input type="radio" name="q{{ q_index }}" value="{{ option }}" required>
                             {{ option }}
                         </label><br>
                     {% endfor %}
@@ -42,8 +44,7 @@
     </form>
 
     <script>
-        let timeLeft = timer * 60;
-
+        let timeLeft = {{ timer }} * 60;  // timer is passed from Flask in minutes
         const timerElement = document.getElementById('time');
 
         const countdown = setInterval(() => {

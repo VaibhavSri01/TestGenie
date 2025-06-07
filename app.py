@@ -110,7 +110,7 @@ def submit():
     for i in range(len(correct_answers)):
         selected = request.form.get(f'q{i}')
         user_answers.append(selected)
-        if selected == correct_answers[i]:
+        if selected and selected.strip()[0].lower() == correct_answers[i].strip().lower():
             score += 1
 
     return render_template('result.html', score=score, total=len(correct_answers), user_answers=user_answers, correct_answers=correct_answers)
