@@ -13,6 +13,10 @@ model = genai.GenerativeModel("gemini-1.5-flash")
 app = Flask(__name__)
 app.secret_key = 'testgeine-secret-key'
 
+@app.route('/signup')
+def signup():
+    render_template('signup.html')
+
 @app.route('/')
 def home():
     return render_template('home.html')
