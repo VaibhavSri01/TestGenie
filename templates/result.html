@@ -5,14 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Result</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 20px;
+        background-color: #f7f9fc;
+        color: #2c3e50;
+    }
+
+    h1 {
+        text-align: center;
+        color: #34495e;
+        margin-bottom: 30px;
+    }
+
+    .result {
+        background-color: #ffffff;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        max-width: 600px;
+        margin: auto;
+    }
+
+    .result p {
+        font-size: 20px;
+        font-weight: bold;
+        color: #27ae60;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        margin-top: 25px;
+        font-size: 18px;
+        color: #2980b9;
+        border-bottom: 2px solid #ecf0f1;
+        padding-bottom: 5px;
+    }
+
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    li {
+        background-color: #ecf0f1;
+        padding: 10px 15px;
+        margin-bottom: 8px;
+        border-radius: 6px;
+    }
+
+    a {
+        display: block;
+        text-align: center;
+        margin-top: 30px;
+        text-decoration: none;
+        padding: 12px 20px;
+        background-color: #3498db;
+        color: white;
+        font-weight: bold;
+        border-radius: 6px;
+        transition: background-color 0.3s ease;
+        max-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    a:hover {
+        background-color: #2980b9;
+    }
+
+    @media (max-width: 600px) {
         .result {
-            margin-bottom: 20px;
+            padding: 15px;
         }
-    </style>
+
+        .result p {
+            font-size: 18px;
+        }
+    }
+</style>
+
 </head>
 <body>
    <h1>Quiz Result</h1>
